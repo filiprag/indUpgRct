@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './home'
+import Navbar from './navbar'
+import Arenor from './arenor'
+import Weather from './weather'
+import Covid from './covid'
+import covidCountry from './covidCountry'
+import users from './users'
+import login from './login'
+import testcovid from './testcovid'
+import fortniteStore from './fortniteStore'
+import loginHotell from './loginHotell'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <loginHotell/>
+     <Navbar/>
+     <switch>
+       <Route path="/home" component={Home}/>
+       <Route path="/arenor" component={Arenor}/>
+       <Route path="/weather" component={Weather}/>
+       <Route path="/covid" component={Covid}/>
+       <Route path="/covidCountry" component={covidCountry}/>
+       <Route exact path="/users" component={users}/>
+       <Route exact path="/login" component={login}/>
+       <Route exact path="/fortniteStore" component={fortniteStore}/>
+       <Route exact path="/testcovid" component={testcovid}/>
+       <Route exact path="/loginHotell" component={loginHotell}/>
+       <Route exact path="/" component={Home}/>
+     </switch>
+
     </div>
+    </BrowserRouter>
   );
 }
 

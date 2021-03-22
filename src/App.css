@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.photo {
+  height: 100px;
+  width: 100px;
+}
+.card {
+  margin-left: auto;
+  margin-right: auto;
+}
