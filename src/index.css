@@ -48,15 +48,15 @@ li a:hover {
   margin-right: auto;
 }
 .centralt-table thead th {
-  background-color: #ffaa6b;
-  border: solid 1px #ffaa6b;
-  color: #292a3e;
+  background-color: #363535;
+  border: solid 1px #363535;
+  color: #ffffff;
   padding: 10px;
   text-align: left;
-  text-shadow: 1px 1px 1px #fff;
+  
 }
 .centralt-table tbody td {
-  border: solid 1px #e2dfdf;
+  border: solid 1px #e7e5e5;
   color: #292a3e;
   padding: 10px;
   text-shadow: 1px 1px 1px #fff;

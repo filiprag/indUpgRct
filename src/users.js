@@ -1,5 +1,9 @@
 import React,{Component} from 'react'
 import axios from 'axios'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Card, Table} from 'react-bootstrap';
 
 const api = axios.create({
     baseURL:'https://thingproxy.freeboard.io/fetch/http://informatik10.ei.hv.se/UserService/Users'
@@ -12,10 +16,12 @@ class users extends Component
     }
     constructor(){
         super();
-        api.get('/').then(res => {
-            console.log(res.data)
-            this.setState({ users: res.data})
-        })
+        this.getUsers();
+    }
+
+    getUsers = async () =>{
+        let data = await api.get('/').then(({ data }) => data);
+        this.setState({ users: data})
     }
 
     render()
@@ -25,8 +31,10 @@ class users extends Component
                 
                 {/* { this.state.users.map(user => <h2>{user.id}</h2>)} */}
 
-                <h1 className="rubrik">Konton från hotell</h1>
-                <table className="centralt-table">
+                <h1 className="rubrik">Aktiva adminkonton från hotell</h1>
+                <Card bg="dark" text="white" border="light" className="mb-3"style={{color:`#000`, width: '65rem' }}>
+           <Card.Body>
+           <Table  hover variant="dark">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -37,13 +45,13 @@ class users extends Component
                             <th>Postnummer</th>
                             <th>Telefonnummer</th>
                             <th>Roll</th>
-                         
                         </tr>
                     </thead>
                     <tbody>
                     {this.state.users.map(user=>{
                     return(
-                            <tr>
+                            // <tr key="user.id">
+                             <tr >
                              <td>{user.id}</td>
                              <td>{user.name}</td>
                              <td>{user.userName}</td>
@@ -56,7 +64,9 @@ class users extends Component
                     )
                 })}
             </tbody>
-            </table>
+            </Table>
+            </Card.Body>
+        </Card>
 
             </div>
         )  

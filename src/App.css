@@ -45,3 +45,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+body {
+  background-image: url("http://localhost:3000/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y; /* Lägger till så att bilden läggas till vertikalt flera gånger */
+  height: 100vh;
+  /* overflow: hidden; Kunde ej scrolla med denna på*/
+  width: 100%;
+}

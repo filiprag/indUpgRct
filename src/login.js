@@ -21,8 +21,8 @@ class login extends Component
     
     logIn = async () => {
         let res = await api.post('/', { 
-            username: "ConfAdmin", 
-            password: "ConfAdmin123!"})
+            username: "TestTest", 
+            password: "TestTest123!"})
         console.log(res);
 
         this.setState({
@@ -47,7 +47,7 @@ class login extends Component
                 <h3>{this.state.roll}</h3>
 
                 <Form onSubmit={this.logIn}>
-                    <Form.Group onSubmi= {this.logIn}>
+                    <Form.Group onSubmitCapture= {this.logIn}>
                         <Form.Text >
                             Logga in för att fortsätta
                         </Form.Text>

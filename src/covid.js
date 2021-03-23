@@ -40,26 +40,7 @@ class Covid extends Component
             
            </Card.Body>
         </Card>
-               
-                <table className="centralt-table">
-                    <thead>
-                        <tr>
-                            <th>Fall</th>
-                            <th>Döda</th>
-                            <th>Tillfrisknade</th>
-                         
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                             <td>{this.state.cases}</td>
-                             <td>{this.state.deaths}</td>
-                             <td>{this.state.deaths}</td>
-                            </tr>
-            </tbody>
-            </table>
 
-            
             </div>
         )  
      } 

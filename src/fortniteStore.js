@@ -20,18 +20,19 @@ class fortniteStore extends Component
     
     constructor(){
         super();
-        api.get('/').then(res => {
-            console.log(res.data)
-            this.setState({ storeInfo: res.data})
-        })
+        this.getStoreInfo();
+        }
+    
+    getStoreInfo = async () =>{
+        let data = await api.get('/').then(({ data }) => data);
+        this.setState({ storeInfo: data})
     }
     
     render()
-     {
+{
         return(
             <div>
-
-                { this.state.storeInfo.map(storeItem => <h2>{storeItem.id}</h2>)}
+                { this.state.storeInfo.map(storeItem => <h2 >{storeItem.id}</h2>)}
                 {/* <h1 className="rubrik">I butiken atm</h1>
                 <Card className="mb-3"style={{color:`#000`, width: '20rem' }}>
            <Card.Body>
@@ -40,15 +41,17 @@ class fortniteStore extends Component
                         <h1>{storeItem.name}</h1>
                     <p>Fall idag:  {tstoreItem.rarity}</p>
                     )
-                })}
-    
-            
+                })}      
            </Card.Body>
         </Card> */}
+         <h1 style={{color: "#363535"}}className="rubrik">I butiken idag</h1>
         <Card bg="dark" text="white" border="light" className="mb-3"style={{color:`#000`, width: '52rem' }}>
            <Card.Body>
-                <h1 style={{color: "white"}}className="rubrik">I butiken atm</h1>
-                <Table variant="light" className="centralt-table" cellspacing="0" cellpadding="0">
+           <Card.Title>
+                   Uppdaterads dagligen vid 00:00 UTC
+               </Card.Title>
+               
+                <Table hover variant="dark">
                     <thead>
                         <tr>
                         <th>Bild</th>

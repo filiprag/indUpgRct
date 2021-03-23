@@ -1,5 +1,10 @@
 import React,{Component} from 'react'
 import axios from 'axios'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Card, Table} from 'react-bootstrap';
+
 class Arenor extends Component
 {
     state={
@@ -19,8 +24,11 @@ class Arenor extends Component
      {
         return(
             <div>
-                <h1 className="rubrik">Fotbollsarenor från API </h1>
-                <table className="centralt-table ">
+                <h1 style={{color: "#363535"}}className="rubrik">Fotbollsarenor</h1>
+                <Card bg="dark" text="white" border="light" className="mb-3"style={{color:`#000`, width: '52rem' }}>
+           <Card.Body>
+                
+           <Table hover variant="dark">
                     <thead>
                         <tr>
                             <th>Nr</th>
@@ -44,7 +52,9 @@ class Arenor extends Component
                     )
                 })}
             </tbody>
-            </table>
+            </Table>
+            </Card.Body>
+        </Card>
             </div>
         )  
 

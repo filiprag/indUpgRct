@@ -16,9 +16,9 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <loginHotell/>
+    
      <Navbar/>
-     <switch>
+     <Switch>
        <Route path="/home" component={Home}/>
        <Route path="/arenor" component={Arenor}/>
        <Route path="/weather" component={Weather}/>
@@ -30,7 +30,7 @@ function App() {
        <Route exact path="/testcovid" component={testcovid}/>
        <Route exact path="/loginHotell" component={loginHotell}/>
        <Route exact path="/" component={Home}/>
-     </switch>
+     </Switch>
 
     </div>
     </BrowserRouter>

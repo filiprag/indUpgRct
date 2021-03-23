@@ -15,7 +15,7 @@ class loginHotell extends Component
        this.state = {
            username:'',
            password:'',
-           roll:'',
+           roll:''
        }
    }
 
@@ -29,14 +29,16 @@ class loginHotell extends Component
        let res = axios.post('https://thingproxy.freeboard.io/fetch/http://informatik10.ei.hv.se/UserService/Login', this.state)
        .then(res=>{
            console.log(res)
-        //    this.setState({roll: res.data})
+           this.setState({
+            roll:res.data.role,
+        }
+        )
+           
         })
         .catch(error =>{
             console.log(error)
         })
-        /* this.setState({
-            roll:res.data.role,
-        }) */
+        
         
    }
     
@@ -45,14 +47,11 @@ class loginHotell extends Component
      {
          const { username, password} = this.state
         return(
+            // <div style={{ backgroundImage: "url(/background1.jpg)", width:"250x"}}>
             <div>
                
                 <h1 className="rubrik">Logga in</h1>
 
-                <h3>{this.state.roll}</h3>
-
-               
-                
                 <Card bg="dark" text="white" className="mb-3"style={{color:`#000`, width: '20rem'}}>
            <Card.Body>
                <Card.Title>
@@ -73,6 +72,9 @@ class loginHotell extends Component
                 </div>
                 <br/>
                 <Button type="submit" variant="success">Logga in</Button>
+                <br/>
+                
+                <h3>{this.state.roll}</h3>
                 </Form.Group>
                 </Form>
            </Card.Body>
