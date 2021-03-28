@@ -18,7 +18,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(54, 51, 51);
 }
 
 li {
@@ -53,7 +53,6 @@ li a:hover {
   color: #ffffff;
   padding: 10px;
   text-align: left;
-  
 }
 .centralt-table tbody td {
   border: solid 1px #e7e5e5;
@@ -65,6 +64,54 @@ li a:hover {
   text-align: center;
   color: #4b4d4d;
 }
-p{
+p {
   text-align: center;
+}
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+.text-link:hover {
+  background-color: none;
+  text-decoration: none;
+  color: white;
+}
+.Home-main-card {
+  width: 320px;
+  height: 530px;
+}
+.Home-Card-img {
+  height: 350px;
+  width: 320px;
+}
+.CardDeck-Home {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.FortniteShop-main-card {
+  width: 90%;
+}
+.nav-link-brand {
+  font-family: aq;
+}
+
+@font-face {
+  font-family: "aq";
+  src: url(Fonts/Aq.otf);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  /* Länk till fonten: https://www.fontspace.com/aquire-font-f43735 */
+}
+.rubrik_home {
+  font-family: "Nanum Gothic", sans-serif;
+  color: rgb(59, 59, 59);
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.rubrik_home_div {
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
