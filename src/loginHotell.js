@@ -18,7 +18,7 @@ class loginHotell extends Component {
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
+  ƒ;
   submitHandler = async (e) => {
     e.preventDefault();
 
@@ -61,7 +61,6 @@ class loginHotell extends Component {
     return (
       <div>
         <h1 className="rubrik">Logga in</h1>
-        
         <Card
           bg="dark"
           text="white"
